@@ -1,0 +1,15 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: TimLie
+ * @Last Modified time: 2018-05-08 18:27:02
+ *
+ * @description: define opacity
+ *
+ */
+
+opacitys(n)
+  opacity: n
+  filter: unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round($opacity * 100) + ')')
+

@@ -1,0 +1,23 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: TimLie
+ * @Last Modified time: 2018-05-08 18:27:02
+ *
+ * @description: label focus or hover css
+ *
+ */
+
+label-variant($color)
+  background-color: $color
+
+  &[href]
+    &:hover,
+    &:focus
+      background-color: darken($color, 10%)
+
+
+
+
+

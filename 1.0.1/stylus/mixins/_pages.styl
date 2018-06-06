@@ -1,0 +1,75 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-15 16:30:32
+ *
+ * @description: pages funs
+ */
+
+//skin
+page-variant($color = $aid-dark5-gray, $font-size = $font-size-small, $light-color = $aid-light5-gray)
+  &,
+  & > a,
+  & > span
+    color: $color
+    font-size: $font-size
+  ~/
+    .page-total
+      color: $light-color
+    .page-go
+      > input[type="text"],
+      > input[type="number"]
+        border-color: $light-color
+
+// size
+page-size($padding-vertical = $padding-small-vertical, $padding-horizontal = $padding-base-horizontal)
+  &
+    > a,
+    > span
+      padding: $padding-vertical $padding-horizontal
+  ~/
+    .page-go
+      > input[type="text"],
+      > input[type="number"]
+        padding: $padding-vertical $padding-horizontal
+
+// page options status
+page-status($hover-color = $red-base, $hover-bg = $transparent, $active-color = $white-base, $active-bg = $red-base, $disabled-color = $aid-light2-gray)
+  &.page-number
+    > a:hover
+      background-color: $hover-bg
+      color: $hover-color
+    > a.active
+      background-color: $active-bg
+      color: $active-color
+  &.disabled a,
+  &[disabled] a,
+  & a[disabled],
+  & .disabled
+    cursor: default
+    pointer-events: none
+    color: $disabled-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

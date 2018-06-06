@@ -1,0 +1,252 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: TimLie
+ * @Last Modified time: 2018-05-08 16:42:49
+ *
+ * @description: normalize.css define global css
+ */
+
+//
+// 1. Set default font family to sans-serif.
+// 2. Prevent iOS and IE text size adjust after device orientation change,
+//    without disabling user zoom.
+//
+
+html
+  font-family: sans-serif
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+  box-sizing: border-box
+
+//
+// Remove default margin.
+//
+
+body
+  margin: 0
+
+
+// HTML5 display definitions
+// ==========================================================================
+
+//
+// Correct `block` display not defined for any HTML5 element in IE 8/9.
+// Correct `block` display not defined for `details` or `summary` in IE 10/11
+// and Firefox.
+// Correct `block` display not defined for `main` in IE 11.
+//
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary
+  display: block
+
+
+//
+// 1. Correct `inline-block` display not defined in IE 8/9.
+// 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+//
+
+audio,
+canvas,
+progress,
+video
+  display: inline-block
+  vertical-align: baseline
+
+
+//
+// Prevent modern browsers from displaying `audio` without controls.
+// Remove excess height in iOS 5 devices.
+//
+
+audio:not([controls])
+  display: none
+  height: 0
+
+
+//
+// Address `[hidden]` styling not present in IE 8/9/10.
+// Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+//
+
+[hidden],
+template
+  display: none
+
+
+// Links
+// ==========================================================================
+
+a
+  background-color: transparent
+
+a:active,
+a:hover
+  outline: 0
+
+//
+// Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+//
+
+abbr[title]
+  border-bottom: 1px dotted
+
+//
+// Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+//
+b,
+strong
+  font-weight: bold
+
+
+//
+// Address styling not present in Safari and Chrome.
+//
+dfn
+  font-style italic
+
+//
+// notice:默认字体为16px = 1em ,这里相当于32px大小
+//
+h1
+  font-size: 2em
+  margin: 0.67em 0
+
+mark
+  background: #ff0
+  color: #000
+
+small
+  font-size: 80%
+
+sub,
+sup
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+
+sup
+  top: -0.5em
+sub
+  bottom: -0.25em
+
+img
+  border: 0
+
+// 关于在非根目录下，svg 出现溢出问题，ie
+svg:not(:root)
+  overflow: hidden
+
+figure
+  margin: 1em 40px
+
+hr
+  box-sizing: content-box
+  height: 0
+
+pre
+  overflow: auto
+
+// 等宽字体显示bug修复
+code,
+kbd,
+pre,
+samp
+  font-family: monospace, monospace
+  font-size: 1em
+
+button,
+input,
+optgroup,
+select,
+textarea
+  color: inherit
+  font: inherit
+  margin: 0
+
+button
+  overflow: visible
+
+// 默认本应该是小写在不设置text-transform:none default，button, select会受父级影响
+button,
+select
+  text-transform: none
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"]
+  -webkit-appearance: button
+  cursor: pointer
+
+button[disabled],
+html input[disabled]
+  cursor: default
+
+// 去除聚焦时的外虚框
+button::-moz-focus-inner,
+input::-moz-focus-inner
+  border: 0
+  padding: 0
+
+input
+  line-height: normal
+
+input[type="checkbox"],
+input[type="radio"]
+  box-sizing: border-box
+  padding: 0
+
+// 去除箭头
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button
+  height: auto
+
+input[type="search"]
+  -webkit-appearance: textfield;
+  box-sizing: content-box
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration
+  -webkit-appearance: none
+
+fieldset
+  border: 1px solid #c0c0c0
+  margin: 0 2px
+  padding: 0.35em 0.625em 0.75em
+
+// fieldset 标签
+legend
+  border: 0
+  padding: 0
+
+textarea
+  overflow: auto
+
+optgroup
+  font-weight: bold
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+td,
+th
+  padding: 0
+
+
+

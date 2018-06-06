@@ -1,0 +1,139 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-15 16:44:06
+ *
+ * @description: normal tag define (a)
+ */
+
+*
+  box-sizing(border-box)
+*:before,
+*:after
+  box-sizing(border-box)
+
+
+html
+  font-size: $font-size-small
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+body
+  font-family: $font-family-base
+  font-size: $font-size-base
+  line-height: $line-height-base
+  color: $text-body-color
+  background-color: $body-default-bg
+
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea
+  font-family: inherit
+  font-size: inherit
+  line-height: inherit
+
+
+// default normal color
+p
+  color: $text-body-color
+a
+  color: $link-default-color
+  text-decoration: none
+  &.hover:hover,
+  &:hover,
+  &.active
+  &:active
+    color: $link-hover-color
+    text-decoration: $link-hover-decoration
+
+figure
+  margin: 0
+
+
+img
+  vertical-align: middle
+
+.img-rounded
+  border-radius: $border-radius-large
+
+.img-circle
+  border-radius: 50% // set radius in percents
+
+
+// 适配
+
+// default h1-h6 colors and size
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  color: $title-default-color
+
+h1
+  font-size: $font-size-h1
+
+h2
+  font-size: $font-size-h2
+
+h3
+  font-size: $font-size-h3
+
+h4
+  font-size: $font-size-h4
+
+h5
+  font-size: $font-size-h5
+
+h6
+  font-size: $font-size-h6
+
+
+// hr colors
+hr
+  height: 0
+  border-style: solid
+  border-width: 1px 0 0 0
+  border-color: $line-seg-color
+
+
+// iOS "clickable elements" fix for role="button"
+[role="button"]
+  cursor: pointer
+
+// placeholder
+::-moz-placeholder
+   color: $input-placeholder-color
+::-webkit-input-placeholder
+   color: $input-placeholder-color
+:-ms-input-placeholder
+   color: $input-placeholder-color
+
+// ul or ol
+// ul,ol
+//   margin: 0
+//   padding: 0
+//   list-style: none
+
+// status type
+.disabled,
+[disabled]
+  color: $state-disabled  // 这里只定义色系，其他模式由对应的功能组件控制
+// display class
+.hide
+  display: none !important
+.show
+  display: block !important
+.clearfix
+  clearfix()
+
+
+
+
+
+

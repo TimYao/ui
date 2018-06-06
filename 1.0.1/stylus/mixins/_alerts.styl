@@ -1,0 +1,31 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-11 14:26:08
+ *
+ * @description: alert(弹框模块)
+ */
+
+// alert skin
+alert-variant($bg = $white-base)
+  background-color: $bg
+
+// alert width set
+alert-size($width, $height, $padding-vertical = 0, $padding-horizontal = 0)
+  padding: $padding-vertical $padding-horizontal
+  width: $width
+  height: $height
+  margin: 0 auto
+
+// alert position
+alert-position($position = fixed, $x = 50%, $y = 50%)
+  position: $position
+  top: $x
+  left: $y
+  translates(-($x), -($y))
+
+
+
+

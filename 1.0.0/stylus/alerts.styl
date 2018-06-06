@@ -1,0 +1,74 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-11 14:35:16
+ *
+ * @description: alert(弹框定义)
+ */
+
+// alert base define
+.alert
+  display: inline-block
+  left: 0
+  top: 0
+  z-index: 10000
+  .alert-close
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 9999
+    color: $aid-light3-gray
+    font-size: $font-size-large
+  &
+    *
+      box-sizing(border-box)
+    .alert-content
+      alert-size(100%, 100%, 15px, 15px)
+      position: relative
+    .alert-title,
+    .alert-info
+      word-wrap: break-word
+      word-break: break-all
+    .alert-title
+      margin: 0 0 3% 0
+    .alert-info
+      text-align: justify
+    .alert-btns
+      alert-size(100%, 18%, 0, 15px)
+      position: absolute
+      left: 0
+      bottom: 5%
+
+// status
+.alert-full
+  height: 100%
+.alert-lack
+  calcs('height', 100%, 20px, 20px, 0, 0)
+.alert-btns-left
+  text-align: left
+.alert-btns-right
+  text-align: right
+.alert-btns-center
+  text-align: center
+
+
+// 主弹层风格
+.alert-default
+  alert-size(400px, 200px)
+  alert-position()
+  box-shadow(0, 0, 4px, 0, $aid-light4-gray)
+  alert-variant()
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-11 18:14:54
+ *
+ * @description: define buttons style
+ */
+
+ // define default btn
+ .btn
+   display: inline-block
+   text-align: center
+   vertical-align: middle
+   border: 1px solid transparent
+   background-image: none
+   white-space: nowrap
+   cursor: pointer
+   touch-action: manipulation
+   button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $font-weight-base, $line-height-base, $border-radius-base)
+   user-select(none)
+   &,
+   &:active,
+   &.active
+     &:focus,
+     &.focus
+       outline: 0
+   &:hover,
+   &:focus,
+   &.focus
+    text-decoration: none
+   &:active,
+   &.active
+     outline: 0
+     background-image: none
+   &.disabled,
+   &[disabled],
+   fieldset[disabled] &
+    cursor: default
+   a &
+    &.disabled,
+    fieldset[disabled] &
+      pointer-events: none
+
+
+// 正文 color
+.text-link
+  &
+    color: $link-normal-blue
+  &:hover
+    color: $link-hover-blue
+  &:active,
+  &.active
+    color: $link-active-blue
+
+
+// btn 皮肤型按钮
+
+// primary 模式
+.btn-primary
+  button-variant($btn-primary-color, $btn-primary-bg)
+  button-retvariant($btn-primary-color, $aid-dark1-red, $btn-primary-color, $aid-dark2-red)
+  &-default
+    button-variant($btn-primary-default-color, $btn-primary-default-bg)
+    button-retvariant($btn-primary-default-color, $aid-light4-gray, $btn-primary-default-color, $aid-light5-gray)
+  &__disabled
+    button-variant($aid-light6-gray, $aid-light1-gray)
+
+
+// simple 模式
+.btn-simple
+  button-variant($btn-simple-color, $btn-simple-bg, $btn-simple-border)
+  button-retvariant($btn-simple-color, $aid-light1-red, $btn-simple-color, $aid-light2-red, $btn-simple-color)
+  &-default
+    button-variant($btn-simple-default-color, $btn-simple-default-bg, $btn-simple-default-border)
+    button-retvariant($aid-dark5-gray, $aid-light1-gray, $aid-dark5-gray, $aid-light2-gray, $gray-base)
+  &__disabled
+    button-variant($btn-disabled-color, $white-base, $aid-light3-gray)
+
+
+// 功能性按钮
+.link-normal
+  button-variant($btn-color)
+  button-retvariant($red-base, $transparent, $aid-dark1-red, $transparent)
+.btn
+  &-default
+    button-variant($btn-color)
+    &__disabled
+      button-variant($btn-disabled-color, $white-base)
+  &-confirm
+    button-variant($btn-confirm-color)
+  &-alert
+    button-variant($btn-alert-color)

@@ -1,0 +1,76 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-15 17:35:36
+ *
+ * @description: bubble
+ */
+
+
+//skin
+bubble-variant($bubble-color, $bubble-bg)
+  $bubble-bg = rgba($bubble-bg, 0.7)
+  a&,
+  &
+    color: $bubble-color
+    background-color: $bubble-bg
+    a&,
+    & a
+      color: $bubble-color
+      text-decoration: none
+  &:after
+    border-color: $bubble-bg
+
+
+// arrow set
+bubble-arrow-set($border-height-horizontal = 7px, $border-width-vertical = 5px, $attrs = top right left)
+  &:after
+    border-width: $border-height-horizontal $border-width-vertical
+    for attr in $attrs
+      border-{attr}-color: $transparent
+
+
+// bubble position
+bubble-position($offset-pos1 = top, $offset-pos2 = left, $offset-x = 50%, $offset-y = -10px, $margin = margin-left, $offset-v = -7px)
+  &:after
+    {$margin}: $offset-v
+    {$offset-pos1}: $offset-y
+    {$offset-pos2}: $offset-x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

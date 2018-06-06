@@ -1,0 +1,60 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-11 16:41:57
+ *
+ * @description: define mixins buttons style
+ */
+
+// Button skin 默认
+button-variant($color, $background = transparent, $border = transparent)
+  color: $color
+  background-color: $background
+  border-color: $border
+  &:focus,
+  &.focus
+    color: $color
+    background-color: $background
+    border-color: $border
+  &:hover
+    color: $color
+    background-color: $background
+    border-color: $border
+    text-decoration: none
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &
+    &:hover,
+    &:focus,
+    &.focus
+      background-color: $background
+      border-color: $border
+
+
+// 预设状态
+button-retvariant($hover-color, $hover-bg, $active-color, $active-bg, $border-color = $transparent)
+  &:hover
+    color: $hover-color
+    background-color: $hover-bg
+    border-color: $border-color
+  &:active
+    color: $active-color
+    background-color: $active-bg
+    border-color: $border-color
+
+
+// Button sizes
+button-size($padding-vertical, $padding-horizontal, $font-size, $font-weight, $line-height, $border-radius)
+  padding: $padding-vertical $padding-horizontal
+  font-size: $font-size
+  font-weight: $font-weight
+  height: ceil(2*($padding-vertical)+($line-height*$font-size))
+  line-height: $line-height
+  border-radius: $border-radius
+
+
+
+
+

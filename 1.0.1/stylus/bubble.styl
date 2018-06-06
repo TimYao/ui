@@ -1,0 +1,97 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-15 17:35:36
+ *
+ * @description: bubble
+ */
+
+ // foreach
+ $direct = top left right bottom
+
+// 主框架定义
+ .bubble
+   $border-width-horizontal = 7px
+   $border-height-vertical = 5px
+   display: inline-block;
+   max-width: 200px
+   padding: $padding-base-vertical $padding-base-vertical
+   position: relative
+   font-size: $font-size-small
+   bubble-variant($white-base, $aid-dark9-gray)
+   border-radius(4px)
+   &:after
+     display: none
+     size(0, 0)
+     content: ''
+     position: absolute
+     border-style: solid
+   for attr in $direct
+     if attr == "top" || attr == "bottom"
+        $border-width = $border-height-vertical
+        $border-height = $border-width-horizontal
+        $offset-x = 50%
+        $offset-y = -($border-height-vertical*2)
+        $margin = margin-left
+     else if attr == "left" || attr == "right"
+        $border-width = $border-width-horizontal
+        $border-height = $border-height-vertical
+        $offset-x = -($border-height-vertical*2)
+        $offset-y = 50%
+        $margin = margin-top
+     &-arrow-{attr}
+       &:after
+         display: block
+       if attr == "top"
+         $attrs = top right left
+         $keys = top left
+       else if attr == "bottom"
+         $attrs = bottom right left
+         $keys = bottom left
+       else if attr == "left"
+         $attrs = top bottom left
+         $keys = top left
+       else if attr == "right"
+         $attrs = top bottom right
+         $keys = top right
+       bubble-arrow-set($border-width, $border-height, $attrs)
+       bubble-position($keys[0], $keys[1], $offset-x, $offset-y, $margin, -($border-width-horizontal))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

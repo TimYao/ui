@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>csdn login</title>
+    <link rel="stylesheet" href="../../../dist/ui/1.0.0/stylus/ui.css" />
+  </head>
+  <body>
+    <!--
+     问题：
+      1、关于行高问题，基数问题
+      2、box-sizing设置问题
+      3、布局
+
+
+
+      语言化
+
+      渲染模式上
+
+      html4  smgl子级 dtd定义
+      html5  doctype html
+
+      以上产生两种模式
+      标准模式
+      混合模式 <meta http-equiv = "x-ua-compatable" content="IE=Edge"> 针对IE 支持最高模式展示
+
+
+      增加浏览器解析
+       html lang="en"
+
+
+      seo爬虫提高
+
+      编码渲染模式 charset="utf-8"
+      浏览器内容类型渲染模式 http-equiv = "content-type" content="text/html"
+      关键字keys,description指定
+
+
+
+
+
+    -->
+    <div class="containter-wrap">
+      <h4>全局状态</h4>
+      <hr>
+
+      <div class="m-wrap">
+          <h5>1、disabled</h5>
+          <p>针对按钮，所以请组合 btn 运用(除了a标签)</p>
+          <p>
+            add 方式:
+            <br/>
+            (1) class="btn disabled"
+            <br/>
+            (2) 标签属性模式 disabled
+          </p>
+          <div class="">
+            <button class="btn disabled">class模式默认色系</button>
+            <button class="btn" disabled>属性默认色系</button>
+            <button class="btn btn-default" disabled>btn-default色系</button>
+          </div>
+      </div>
+
+      <div class="m-wrap">
+        <h5>2、hide or show</h5>
+        <p>针对display:none控制</p>
+        <p>
+          add 方式:
+          <br/>
+          class="btn hide"
+          <br/>
+          class="btn show"
+        </p>
+      </div>
+
+      <div class="m-wrap">
+        <h5>3、clearfix</h5>
+        <p>针对清除浮动,但不提倡引入标签class模式，提倡调用clearfix()继承到需要标签上</p>
+        <p>
+          add 方式:
+          <br/>
+          (1) class="btn clearfix"
+          <br/>
+          (2) .btn
+                clearfix()
+        </p>
+      </div>
+
+      <div class="m-wrap">
+        <h5>4、:link :visited :hover :focus :active  </h5>
+        <p>
+           1、a标签目前支持 :hover / :active
+        </p>
+        <p>
+          add 方式:
+          <br/>
+          class="hover" / class="active" / 默认不填写
+        </p>
+        <a href="" class="hover">add class hover</a>
+        <br/>
+        <a href="" class="active">add class active</a>
+
+        <br/>
+        <br/>
+
+        <p>
+          2、button 标签目前支持 :hover / :focus / :active / .disabled / [disabled]
+        </p>
+        <p>
+          add 方式:
+          <br/>
+          class="hover" / class="active"
+          <br/>
+          btn模式下默认为统一色系，无变化，可组合到对应皮肤组件中
+        </p>
+        <button class="btn hover">btn hover(hover必要性不大)</button>
+        <br/>
+        <button class="btn disabled">btn disabled</button>
+      </div>
+
+      <div class="m-wrap">
+          <h5>5、.active  </h5>
+          <p>
+            关于当前项统一.active,包括所有组件下，后期保证该组件下存在,组件会优先该组件下同名属性
+          </p>
+      </div>
+      <br/><br/>
+
+      <h4>组件</h4>
+      <hr>
+      <!--buttons module-->
+      <div class="m-wrap">
+        <h5>按钮</h5>
+        <p>皮肤组合型</p>
+        <p>(1) 主色调</p>
+        <input type="button" value="primary" class="btn btn-primary">
+        <input type="button" value="primary-default" class="btn btn-primary-default">
+        <input type="button" value="primary-disabled" disabled class="btn btn-primary__disabled">
+
+        <br/><br/>
+
+        <p>(2) 简色调</p>
+        <input type="button" value="simple" class="btn btn-simple">
+        <input type="button" value="simple-default" class="btn btn-simple-default">
+        <input type="button" value="simple-disabled" disabled class="btn btn-simple__disabled">
+
+        <br/><br/>
+
+        <p>(3) 默认</p>
+        <input type="button" value="btn-default" class="btn btn-default">
+        <input type="button" value="disabled" disabled class="btn btn-default__disabled">
+
+        <p>(4) 功能性</p>
+        <button class="btn btn-confirm">btn-confirm</button>
+        <button class="btn btn-alert">btn-alert</button>
+      </div>
+
+      <div class="m-wrap">
+        <h5>链接</h5>
+        <p>(1) 默认</p>
+        <a href="">link-default</a>
+        <p>(2) 常规</p>
+        <a href="" class="link-normal">link-normal</a>
+        <p>(2) 正文链接</p>
+        <p><a href="" class="text-link">text-link</a></p>
+      </div>
+
+      <div class="m-wrap">
+        <h5>正文</h5>
+        <p>正文</p>
+        <p>正文内容</p>
+      </div>
+
+      <!--layer module-->
+      <div class="m-wrap">
+        <h5>弹框</h5>
+        <p><a href="" class="js_alert1" data-component = ".alert-primary">alert-primary</a></p>
+        <p><a href="" class="js_alert1" data-component = ".alert-simple">alert-simple</a></p>
+
+
+        <div class="alert alert-default alert-primary hide">
+          <button class="btn btn-default alert-close js_close">&times</button>
+          <div class="alert-content">
+            <h6 class="alert-title">primary title tag</h6>
+            <div class="alert-info">
+                <div class="coustom-info">
+                  你的个人信息我们会严格保密。绝不会泄漏给第三方机构。
+                </div>
+            </div>
+            <div class="alert-btns alert-btns-right">
+                <button class="btn btn-default">取消</button>
+                <button class="btn btn-primary">确定</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-default alert-simple hide">
+          <button class="btn btn-default alert-close js_close">&times</button>
+          <div class="alert-content">
+            <h6 class="alert-title">simple title tag</h6>
+            <div class="alert-info">
+                <div class="coustom-info">
+                  simple content你的个人信息我们会严格保密。绝不会泄漏给第三方机构。
+                </div>
+            </div>
+            <div class="alert-btns alert-btns-right">
+                <button class="btn btn-default">取消</button>
+                <button class="btn btn-alert">确定</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--form module-->
+      <div class="m-wrap m-form-wrap">
+        <h5>表单(待补充布局后再写)</h5>
+        <div class="form form-coustom">
+          <p>纵模式</p>
+          <form>
+            <div class="form-group">
+              <label for="name" class="form-label control-label">一般</label>
+              <div class="form-control-group">
+                  <input type="text" class="form-control" placeholder="一般" id="name"/>
+                  <div class="help-block">
+                    说明文字
+                  </div>
+              </div>
+            </div>
+
+            <div class="form-group has-success">
+              <label for="name" class="form-label">成功</label>
+              <input type="text" class="form-control" placeholder="123" value="成功"/>
+            </div>
+
+            <div class="form-group has-error">
+              <label for="name" class="form-label">错误提示</label>
+              <div class="form-control-group">
+                <input type="text" class="form-control" placeholder="123" value="错误提示">
+                <div class="text-error">
+                    不可使用除字母和数字以外的字符
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="form-label">不可修改</label>
+              <input type="text" class="form-control" disabled placeholder="123" value="不可修改">
+            </div>
+            <div class="form-group">
+              <label for="name" class="form-label">不可编辑</label>
+              <input type="text" class="form-control form-coustom-text" disabled value="不可编辑文本"/>
+            </div>
+            <div class="form-group">
+              <label for="name" class="form-label">icon input</label>
+              <div class="form-control-group">
+                <input type="text" class="form-control form-control-user" id="user" placeholder="用户名">
+                <label class="icon-user glyphicon glyphicon-user icon-control" for="user"></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name" class="form-label">icon input close</label>
+              <div class="form-control-group">
+                <input type="text" class="form-control form-control-option form-control-info" id="del" placeholder="tab">
+                <label class="icon-remove glyphicon glyphicon-remove icon-control" for="del"></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name" class="form-label">textarea（行高问题）</label>
+              <div class="form-control-group">
+                <textarea class="form-control" placeholder="textarea"></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-horizontal form-horizontal-coustom">
+          <p>横模式</p>
+          <form>
+            <div class="form-group">
+              <label for="name" class="form-label col-x">一般</label>
+              <div class="form-control-group col-y">
+                <input type="text" class="form-control" placeholder="一般" id="name"/>
+                <div class="help-block">
+                  说明文字
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group has-success">
+              <label for="name" class="form-label col-x">成功</label>
+              <div class="form-control-group col-y">
+                <input type="text" class="form-control" placeholder="123" value="成功"/>
+              </div>
+            </div>
+
+            <div class="form-group has-error">
+              <label for="name" class="form-label col-x">错误提示</label>
+              <div class="form-control-group col-y">
+                <input type="text" class="form-control" placeholder="123" value="错误提示">
+                <div class="text-horizontal-error">
+                    不可使用除字母和数字以外的字符
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="form-label col-x">不可修改</label>
+              <div class="form-control-group col-y">
+                <input type="text" class="form-control" disabled placeholder="123" value="不可修改">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="form-label col-x">不可编辑</label>
+              <div class="form-control-group col-y">
+                  <input type="text" class="form-control form-coustom-text" disabled value="不可编辑文本"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="form-label col-x">icon input</label>
+              <div class="form-control-group col-u">
+                <input type="text" class="form-control form-control-user" id="user" placeholder="用户名">
+                <label class="icon-user glyphicon glyphicon-user icon-control" for="user"></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="form-label col-x">icon input close</label>
+              <div class="form-control-group col-y">
+                <input type="text" class="form-control form-control-option form-control-info" id="del" placeholder="tab">
+                <label class="icon-remove glyphicon glyphicon-remove icon-control" for="del"></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="form-label col-x">textarea（行高问题）</label>
+              <div class="form-control-group col-y">
+                <textarea class="form-control" placeholder="textarea"></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!--pages module-->
+      <div class="m-wrap">
+        <h5>分页</h5>
+        <div class="page-wrap">
+          <ul class="page-group page-simple">
+            <li class="page-total">共23页</li>
+            <li class="page-prev" disabled><a href="" class="">上一页</a></li>
+            <li class="page-number">
+              <a href="">1</a>
+              <a href="" class="active">2</a>
+              <span>...</span>
+              <a href="">3</a>
+            </li>
+            <li class="page-next"><a href="">下一页</a></li>
+            <li class="page-go">
+              <input type="text">
+              <a href="###">跳转</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--scroll module-->
+      <div class="m-wrap">
+        <h5>scroll (后期添加适配问题)</h5>
+        <div class="scroll-wrap">
+          <div class="scroll">
+            <div class="scroll-content">
+                这里自行添加标签定义<br/>
+                为了保持跨浏览器的兼容性，请避免使用元素，因为它们在 WebKit 浏览器中不能完全渲染出效果。也不要直接向表单组应用输入框组的 class，输入框组是一个孤立的组件
+            </div>
+            <div class="scroll-group">
+                <div class="scroll-bar scroll-bar__circle"></div>
+                <div class="scroll-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--bubble module-->
+      <div class="m-wrap">
+        <h5>bubble</h5>
+        <div class="bubble-wrap">
+          <p>
+            base class:bubble
+            <br/><br/>
+            module class:<br/>
+            &nbsp;&nbsp;向上: class:bubble-arrow-top<br/>
+            &nbsp;&nbsp;向下: class:bubble-arrow-bottom<br/>
+            &nbsp;&nbsp;向左: class:bubble-arrow-left<br/>
+            &nbsp;&nbsp;向右: class:bubble-arrow-right<br/>
+          </p>
+          <p>常规模式</p>
+          <div class="bubble">
+            <span>默认 我的收藏搬到这里啦！</span>
+          </div>
+          <div class="bubble bubble-arrow-top">
+            <span>我的收藏搬到这里啦！</span>
+          </div>
+          <div class="bubble bubble-arrow-bottom">
+            <span>我的收藏搬到这里啦！</span>
+          </div>
+          <div class="bubble bubble-arrow-left">
+            <span>我的收藏搬到这里啦！</span>
+          </div>
+          <div class="bubble bubble-arrow-right">
+            <span>我的收藏搬到这里啦！</span>
+          </div>
+          <p>链接模式</p>
+          <div class="bubble">
+            <a href="">方式一</a>
+          </div>
+          <a href="" class="bubble">
+            <span>方式二</span>
+          </a>
+        </div>
+      </div>
+
+      <!--toasts module-->
+      <div class="m-wrap">
+        <h5>toasts</h5>
+        <div class="toasts-wrap">
+          <p><a href="" class="js_toasts_move" data-component=".toasts-prompt-up">toasts move</a></p>
+          <p>常规模式</p>
+          <div class="toasts">
+            <span>最多允许十五字，方便快速阅读。</span>
+          </div>
+          <div class="toasts">
+            <i class="glyphicon glyphicon-heart toasts-icon"></i>
+            <span>系统出错，请稍后重试</span>
+          </div>
+          <div class="toasts">
+            <span>已收藏！可以到我的</span>&nbsp;<a href="">a自定义</a>
+          </div>
+          <div class="toasts-prompt__stealth toasts-init toasts-prompt-up">
+            <span>toasts动画展示模式</span>
+          </div>
+        </div>
+        <div class="toasts-wrap">
+          <p>链接模式</p>
+          <div class="toasts">
+            <a href="">最多允许十五字，方便快速阅读。</a>
+          </div>
+          <a href="" class="toasts">
+            <span>最多允许十五字，方便快速阅读。</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!--测试例子-->
+    <!-- <div>水电费水电费水电费水电费水电费水电费水电费是的发多少</div>
+    <div>水电费<span>水电费水电费水电费水电费水电费水电费</span>是的发多少</div> -->
+    <!-- <div class="test">121212</div> -->
+    <script>
+       var jsClose = document.querySelectorAll('.js_close');
+       var jsAlert1 = document.querySelectorAll('.js_alert1');
+       var jsToastsMove = document.querySelector('.js_toasts_move');
+       var component;
+       var alertComponent;
+
+       // layer
+       for(var i = 0; i< jsAlert1.length; i++){
+        jsAlert1[i].onclick = alerts();
+        jsClose[i].onclick = closes();
+       }
+
+
+       // toasts
+       jsToastsMove.onclick = function(e){
+          var ev = e || window.event;
+          component = this.dataset.component;
+          toastsComponent = document.querySelector(component);
+          toastsComponent.classList.add('toasts-animation-up');
+          setTimeout(function(){
+            toastsComponent.classList.remove('toasts-init');
+            toastsComponent.classList.remove('toasts-animation-up');
+          },500)
+          ev.returnValue = false || ev.preventDefault();
+          ev.cancelBubble = true || ev.stopPropagation();
+       }
+
+       // alerts
+       function alerts(callback){
+         return function(e){
+          var ev = e || window.event;
+          component = this.dataset.component;
+          alertComponent = document.querySelector(component)
+          this.isOpen = true;
+          alertComponent.isOpen = true;
+          alertComponent.classList.remove('hide');
+
+          ev.returnValue = false || ev.preventDefault();
+          ev.cancelBubble = true || ev.stopPropagation();
+         }
+       }
+       // closes
+       function closes(){
+          return function(e){
+            var ev = e || window.event;
+            this.parentNode.classList.add('hide');
+            delete this.parentNode.isOpen;
+
+            ev.returnValue = false || ev.preventDefault();
+            ev.cancelBubble = true || ev.stopPropagation();
+          }
+       }
+    </script>
+  </body>
+</html>

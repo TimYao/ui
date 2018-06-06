@@ -1,0 +1,11 @@
+.idea/
+node_modules
+assets
+build
+dist
+
+#nvm 版本控制
+.nvmrc
+
+#mac 
+.DS_Store

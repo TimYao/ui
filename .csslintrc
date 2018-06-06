@@ -1,0 +1,15 @@
+{
+  "adjoining-classes": false,
+  "empty-rules": true,
+  "display-property-grouping": true,
+  "shorthand": true,
+  "font-sizes": true,
+  "ids": true,
+  "zero-units": true,
+  "vendor-prefix": true,
+  "gradients": true,
+  "regex-selectors": true,
+  "import": true,
+  "important": true,
+  "duplicate-properties": true
+}

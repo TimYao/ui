@@ -1,0 +1,202 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-15 15:33:18
+ *
+ * @description: form
+ */
+
+fieldset
+  padding: 0
+  margin: 0
+  border: 0
+  // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+  // so we reset that to ensure it behaves more like a standard block element.
+  // See https://github.com/twbs/bootstrap/issues/12359.
+  min-width: 0
+
+
+legend
+  display: block
+  width: 100%
+  padding: 0
+  margin-bottom: 20px
+  font-size: ($font-size-base * 1.5);
+  line-height: inherit
+  color: $aid-light8-gray
+  border: 0
+  border-bottom: 1px solid $aid-light2-gray
+
+
+label
+  display: inline-block
+  max-width: 100% // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  margin-bottom: 5px
+  font-weight: bold
+
+
+input[type="search"]
+  box-sizing(border-box)
+
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"]
+  margin: 4px 0 0
+  margin-top: 1px \9 // IE8-9
+  line-height: normal
+
+
+input[type="file"]
+  display: block
+
+
+// Make range inputs behave like textual form controls
+input[type="range"]
+  display: block
+  width: 100%
+
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size]
+  height: auto
+
+
+// Focus for file, radio, and checkbox
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus
+  tab-focus();
+
+
+input[type="search"]
+  -webkit-appearance: none
+
+
+// Adjust output element
+output
+  display: block
+  padding-top: ($padding-base-vertical + 1)
+  font-size: $font-size-base
+  line-height: $line-height-base
+  color: $aid-light7-gray
+
+
+// input control class
+.form-control
+  display: block
+  width: 100%
+  height: $input-height-base
+  padding: $padding-base-vertical $padding-base-vertical
+  border-radius: $border-radius-base
+  line-height: $input-height-base
+  font-size: $font-size-base
+  color: $aid-dark5-gray
+  border: 1px solid $aid-light5-gray
+  background-color: #fff
+  background-image: none
+  form-control-hover()
+  form-control-focus()
+  form-control-icon-focus()
+  &::-ms-expand
+    border: 0
+    background-color: $transparent
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] &
+    color: $input-color-disabled
+    background-color: $input-bg-disabled
+    border-color: $input-border-disabled
+    opacity: 1 // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+  &[disabled],
+  fieldset[disabled] &
+    cursor: $cursor-disabled
+
+  // Reset height for `textarea`s
+  textarea&
+    height: auto
+    line-height: $line-height-base
+    resize: none
+
+// form-control-option
+// .form-control-option
+//   form-control-hover($aid-light5-gray)
+//   form-control-focus($aid-light5-gray)
+//   form-control-icon-focus($white-base)
+
+// label text
+.form-label
+  margin-bottom: 8px
+  color: $gray-base
+  font-size: $font-size-base
+  font-weight: normal
+  line-height: $input-height-base
+
+
+// input group
+.form-group
+  margin-bottom: $form-group-margin-bottom
+  clearfix()
+  // icon-control
+  .icon-control
+    position: absolute
+    &:before
+      color: $aid-light5-gray
+  // text-error
+  .text-error
+    display: inline-block
+    width: 100%
+    margin: 8px 0 0 0
+    color: $aid-light8-red
+    font-size: $font-size-small
+  // instruction text
+  .help-block
+    margin: 8px 0 0 0
+    color: $text-comments-color
+    font-size: $font-size-small
+    line-height: $font-size-small * $line-height-base
+  // status
+  &.has-success
+    form-control-variant($state-success-text, $state-success-color, $state-success-bg = $white-base)
+  &.has-warning
+    form-control-variant($state-warning-text, $state-warning-color, $state-warning-bg = $white-base)
+  &.has-error
+    form-control-variant($state-danger-text, $state-danger-color, $state-danger-bg)
+
+
+
+// Horizontal forms  这里等做布局时改写
+.form-horizontal
+  .form-control
+    display: inline-block
+  .text-horizontal-error
+    @extend .form-group .text-error
+    margin:0 0 0 $margin-base-vertical
+    position: absolute
+    top: 50%
+    left: 100%
+    transform: translateY(-50%)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

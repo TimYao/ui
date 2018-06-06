@@ -1,0 +1,134 @@
+@import "./stylus/variables"
+@import "./stylus/mixins"
+
+// reset
+@import "./stylus/normalize"
+@import "./stylus/glyphicons"
+
+
+// Core CSS
+@import "./stylus/default"
+//@import "./stylus/grid"
+
+// 组件
+@import "./stylus/buttons"
+@import "./stylus/alerts"
+@import "./stylus/forms"
+@import "./stylus/pages"
+@import "./stylus/scroll"
+@import "./stylus/bubble"
+@import "./stylus/toasts"
+
+
+/*
+  注意书写
+   1、减少嵌套层过深，防止级联关系太大,尽量平级定义
+   2、如果覆写样式，覆写底层可以采用深层覆盖
+      例如 background 覆写了background-color
+   3、命名
+       全局模式
+       功能组件模式
+         以组件名称-{行为模式、功能模式}_状态模式
+
+
+*/
+
+.containter-wrap
+  padding: 20px
+
+.m-wrap
+  margin: 0 0 50px 0
+  padding: 0 0 30px 0
+  border-bottom: 1px solid #ccc
+
+// 这里给大家随意控制内层内容书写
+.coustom-info
+  padding: 0 10px 0 0
+// 这里表单自定义
+.m-form-wrap
+  clearfix()
+  // 布局
+  .col-x
+    width: 17%
+    padding:0 5% 0 0
+    text-align: right
+  .col-x,.col-y
+    float: left
+
+.form-coustom
+  width: 45%
+  float: left
+  .form-group
+    width: 50%
+  .form-coustom-text
+    border: none
+    background: none
+
+.form-horizontal-coustom
+  width: 45%
+  float: left
+  .form-group
+    width: 100%
+  .form-control-group
+    display: inline-block
+    width: 50%
+
+
+.form-control-group
+  position: relative
+  .icon-user
+    left: 8px
+    top: 8px
+  .form-control-user
+    padding-left: 30px
+  .form-control-info
+    padding-right: 30px
+  .icon-remove
+    size(16px,16px)
+    right: 8px
+    top: 8px
+    background-color: #c1c1c1
+    border-radius(50%)
+    &:before
+      position: relative
+      left: 2px
+      color: #fff
+      font-size: 12px
+
+// 滚动自定义
+.scroll-wrap
+  width: 60%
+  height: 300px
+  margin: 20px
+  border: 1px solid #000
+
+
+// 气泡
+.bubble-wrap
+  .bubble
+    margin: 15px
+
+// toasts
+.toasts-wrap
+  position: relative
+  height: 140px
+  overflow: hidden
+  .toasts
+    margin: 15px
+    &-animation-up
+     animation(toasts-animation-up, .5s, ease)
+    &-prompt__stealth
+      @extend .toasts
+      toasts-variant($white-base, $aid-dark9-gray, 0.2)
+      bottom: 0
+    &-init
+      bottom: -43px
+
+
+// 定义动画
+@keyframes toasts-animation-up
+  from
+    bottom: -43px
+  to
+    bottom: 0
+

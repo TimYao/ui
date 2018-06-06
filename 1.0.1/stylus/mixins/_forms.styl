@@ -1,0 +1,70 @@
+/*
+ * @Author: TimLie
+ * @github: https://github.com/TimYao
+ * @Date: 2018-05-08 11:46:21
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-05-15 15:22:12
+ *
+ * @description: forms
+ *
+ */
+
+// skin
+form-control-variant($text-color = $aid-dark5-gray, $border-color = $aid-light5-gray, $background-color = $white-base)
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label
+    color: $text-color
+  .form-control
+    border-color: $border-color
+    background-color: $background-color
+    form-control-focus()
+    &:focus
+      background-color: $white-base
+
+// focus
+form-control-focus($color = $blue-base)
+  &:focus
+    border-color: $color
+    outline: 0
+
+// form-control to icon of class .icon-control
+form-control-icon-focus($color = $blue-base)
+  &:focus + .icon-control
+    &:before
+      color: $color
+
+
+// hover
+form-control-hover($color = $gray-base)
+  &:hover
+    border-color: $color
+// size
+input-size($input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius)
+  height: $input-height
+  padding: $padding-vertical $padding-horizontal
+  font-size: $font-size
+  line-height: $line-height
+  border-radius: $border-radius
+
+  select&
+    height: $input-height
+    line-height: $input-height
+
+  textarea&,
+  select[multiple]&
+    height: auto
+
+
+
+
+
+
+
